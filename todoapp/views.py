@@ -34,3 +34,11 @@ def task_details(request, task_id):
         'task': task
     }
     return render(request, template, context)
+
+
+def task_delete(request, task_id):
+    task = get_object_or_404(Task, id=task_id)
+    if request.method == 'POST':
+        task.delete()
+        return redirect('tasks')
+    return redirect('tasks')

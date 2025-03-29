@@ -27,7 +27,19 @@ def task_create(request):
     return render(request, template, context)
 
 
-def task_details(request):
+def task_details(request, task_id):
     template = 'todoapp/task_details.html'
     task = get_object_or_404(Task, id=task_id)
-    return render(request, template)
+    context = {
+        'task': task
+    }
+    return render(request, template, context)
+
+
+def task_delete(request, task_id):
+    task = get_object_or_404(Task, id=task_id)
+    if request.method == 'POST':
+        task.delete()
+        return redirect('tasks')
+    else:
+        return redirect('tasks')

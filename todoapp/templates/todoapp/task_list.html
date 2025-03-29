@@ -6,6 +6,10 @@
         {% for task in tasks %}
             <li>
                 <a href="{% url 'task_details' task.id %}">{{ task.title }}</a>
+                <form action="{% url 'task_delete' task.id %}" method="POST" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit" onclick="return confirm('Вы уверены, что хотите удалить эту задачу?');">Удалить</button>
+                </form>
             </li>
         {% endfor %}
     </ul>
