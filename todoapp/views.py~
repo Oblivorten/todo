@@ -25,7 +25,3 @@ def task_create(request):
         'form': form
     }
     return render(request, template, context)
-
-
-def task_details(request):
-    pass
