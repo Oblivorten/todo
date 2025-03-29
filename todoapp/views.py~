@@ -41,5 +41,20 @@ def task_delete(request, task_id):
     if request.method == 'POST':
         task.delete()
         return redirect('tasks')
+    return redirect('tasks')
+
+
+def task_update(request, task_id):
+    task = get_object_or_404(Task, id=task_id)
+    if request.method == 'POST':
+        form = TaskForm(request.POST, instance=task)
+        if form.is_valid():
+            form.save()
+            return redirect('tasks')
     else:
-        return redirect('tasks')
+        form = TaskForm(instance=task)
+    template = 'todoapp/task_update.html'
+    context = {
+        'form': form
+    }
+    return render(request, template, context)
