@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Детали задачи</h1>
+    <p>Заголовок: {{ task.title }}</p>
+    <p>Описание: {{ task.description }}</p>
+    <a href="{% url 'task_update' task.id %}" class="update-link">Изменить задачу</a>
+    <button type="submit" onclick="return confirm('Вы уверены, что хотите удалить эту задачу?');" class="delete-button">Удалить</button>
+{% endblock %}

@@ -1,24 +1,25 @@
 <!doctype html>
 <html lang="en">
 <head>
-    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Регистрация</title>
+    <title>Вход</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
-    <div class="register-form">
-        <h1>Регистрация</h1>
+    {% if form.errors %}
+        <p style="color: red;">Неверное имя пользователя или пароль</p>
+    {% endif %}
+    <div class="login-form">
         <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit" class="register-button">Зарегистрироваться</button>
-         </form>
-        <a href="{% url 'login' %}" class="login-link">Войти</a>
+            <button type="submit" class="login-button">Войти</button>
+        </form>
+        <a href="{% url 'register' %}"class="register-link">Регистрация</a>
     </div>
+
 </body>
 </html>
-

@@ -4,5 +4,9 @@
     <h1>Детали задачи</h1>
     <p>Заголовок: {{ task.title }}</p>
     <p>Описание: {{ task.description }}</p>
-    <a href="{% url 'task_update' task.id %}">Изменить задачу</a>
+    <a href="{% url 'task_update' task.id %}" class="update-link">Изменить задачу</a>
+    <form action="{% url 'task_delete' task.id %}" method="POST" style="display:inline;">
+        {% csrf_token %}
+        <button type="submit" onclick="return confirm('Вы уверены, что хотите удалить эту задачу?');" class="delete-button">Удалить</button>
+    </form>
 {% endblock %}

@@ -3,17 +3,31 @@
 <head>
     {% load static %}
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    {% block title %}Список задач{% endblock %}
+    <title>{% block title %}Список задач{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="{% url 'tasks' %}"> Список задач </a>
+    <header class="header">
+        <nav class="nav">
+            <div class="left-links">
+                <a href="{% url 'tasks' %}" class="link">Список задач</a>
+                <a href="{% url 'task_create' %}" class="link">Создать задачу</a>
+            </div>
+            <div class="right-links">
+                {% if user.is_authenticated %}
+                    <p>{{ user.username }}</p>
+                    <form action="{% url 'logout' %}" method="POST" style="display: inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="logout-button">Выйти</button>
+                    </form>
+                {% else %}
+                    <a href="{% url 'login' %}" class="link">Войти</a>
+                {% endif %}
+            </div>
         </nav>
     </header>
-{% block content %}{% endblock %}
+    {% block content %}{% endblock %}
 </body>
 </html>

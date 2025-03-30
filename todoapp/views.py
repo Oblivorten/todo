@@ -6,7 +6,7 @@ from .forms import TaskForm, UserCreationForm
 
 @login_required
 def task_list(request):
-    tasks = Task.objects.all()
+    tasks = Task.objects.filter(user=request.user)
     template = 'todoapp/task_list.html'
     context = {
         'tasks': tasks
@@ -19,7 +19,9 @@ def task_create(request):
     if request.method == 'POST':
         form = TaskForm(request.POST)
         if form.is_valid():
-            form.save()
+            task = form.save(commit=False)
+            task.user = request.user
+            task.save()
             return redirect('tasks')
     else:
         form = TaskForm()

@@ -1,0 +1,185 @@
+.header {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    background-color: grey;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.left-links,
+.right-links {
+    display: flex;
+    gap: 20px;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.nav p{
+    margin: 0;
+}
+
+.task-list {
+    width : 50%;
+    height: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+.task-link {
+    text-decoration: none;
+    color: black;
+    font-size: 32px;
+}
+
+.task-link:hover {
+    text-decoration: underline;
+}
+
+.update-link {
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 5px 10px;
+    border-radius: 25px;
+}
+
+.update-link:hover {
+    text-decoration: underline;
+}
+
+.delete-button {
+    background-color: white;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 5px 10px;
+    border-radius: 25px;
+}
+
+.delete-button:hover {
+    text-decoration: underline;
+}
+
+.create-button{
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 5px 10px;
+    border-radius: 25px;
+}
+
+.create-button:hover {
+    text-decoration: underline;
+}
+
+.logout-button{
+    background-color: white;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 5px 10px;
+    border-radius: 25px;
+}
+
+.logout-button:hover {
+    text-decoration: underline;
+}
+
+.login-form{
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+.login-button{
+    background-color: white;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 5px 10px;
+    border-radius: 25px;
+}
+
+.login-button:hover {
+    text-decoration: underline;
+}
+
+.register-link{
+    background-color: white;
+    margin: auto;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 5px 10px;
+    border-radius: 25px;
+}
+
+.register-link:hover {
+    text-decoration: underline;
+}
+
+.register-form{
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+.register-button{
+    background-color: white;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 5px 10px;
+    border-radius: 25px;
+}
+
+.register-button:hover {
+    text-decoration: underline;
+}
+
+.login-link{
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 5px 10px;
+    border-radius: 25px;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}
